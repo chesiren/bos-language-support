@@ -1,0 +1,29 @@
+{
+    "iconDefinitions": {
+        "bosFileDark": {
+            "iconPath": "./icons/bos-icon-dark.png"
+        },
+        "cobFileDark": {
+            "iconPath": "./icons/cob-icon-dark.png"
+        },
+        "bosFileLight": {
+            "iconPath": "./icons/bos-icon-light.png"
+        },
+        "cobFileLight": {
+            "iconPath": "./icons/cob-icon-light.png"
+        }
+    },
+    "fileExtensions": {
+        "bos": "bosFileDark",
+        "cob": "cobFileDark"
+    },
+    "light": {
+        "fileExtensions": {
+            "bos": "bosFileLight",
+            "cob": "cobFileLight"
+        }
+    },
+    "folderNames": {},
+    "languageIds": {},
+    "fileNames": {}
+}

@@ -1,0 +1,104 @@
+{
+  "name": "bos-language-support",
+  "displayName": "Bos Language Support",
+  "description": "A vscode extension that adds syntax highlighting and grammar validation for .bos files",
+  "version": "1.0.0",
+  "publisher": "chesiren",
+  "engines": {
+    "vscode": "^1.94.0"
+  },
+  "pricing": "Free",
+  "categories": [
+    "Programming Languages",
+    "Linters",
+    "Other"
+  ],
+  "bugs": {
+    "url": "https://github.com/chesiren/bos-language-support/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chesiren/bos-language-support.git"
+  },
+  "homepage": "https://github.com/chesiren/bos-language-support/blob/main/README.md",
+  "license": "SEE LICENSE IN LICENSE.txt",
+  "icon": "icons/logo.png",
+  "galleryBanner": {
+    "color": "#BE3313",
+    "theme": "dark"
+  },
+  "activationEvents": [],
+  "main": "./client/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "bos",
+        "aliases": [
+          "BOS",
+          "bos"
+        ],
+        "extensions": [
+          ".bos"
+        ],
+        "configuration": "./syntaxes/language-configuration.json",
+        "icon": {
+          "light": "./icons/bos-icon-light.png",
+          "dark": "./icons/bos-icon-dark.png"
+        }
+      },
+      {
+        "id": "cob",
+        "aliases": [
+          "COB",
+          "cob"
+        ],
+        "extensions": [
+          ".cob"
+        ],
+        "icon": {
+          "light": "./icons/cob-icon-light.png",
+          "dark": "./icons/cob-icon-dark.png"
+        }
+      }
+    ],
+    "iconThemes": [
+      {
+        "id": "bos-cob-file-icons",
+        "label": "BOS/COB File Icons",
+        "path": "./theme/bos-icon-theme.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "bos",
+        "scopeName": "source.bos",
+        "path": "./syntaxes/bos.tmLanguage.json"
+      }
+    ]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "vscode-test",
+    "grammar": "antlr4 -Dlanguage=JavaScript -o server server/Bos.g4 && node server/esmToCjs.js",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.7",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.94.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1",
+    "eslint": "^9.9.1",
+    "vscode": "^1.1.37"
+  },
+  "dependencies": {
+    "antlr4": "^4.13.2",
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7",
+    "vscode-languageclient": "^9.0.1",
+    "vscode-languageserver": "^9.0.1",
+    "vscode-languageserver-textdocument": "^1.0.12",
+    "vscode-uri": "^3.0.8"
+  }
+}

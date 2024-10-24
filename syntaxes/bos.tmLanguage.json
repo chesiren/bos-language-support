@@ -1,0 +1,130 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "bos",
+	"patterns": [
+		{
+			"name": "Comment",
+			"scope": "comment",
+			"patterns": [
+				{
+					"begin": "//",
+					"end": "$",
+					"name": "comment.line.double-slash.bos"
+				},
+				{
+					"begin": "/\\*",
+					"end": "\\*/",
+					"name": "comment.block.bos"
+				}
+			]
+		},
+		{
+			"match": "\\b(piece|var|static-var)\\b",
+			"name": "entity.name.tag.bos"
+		},
+		{
+			"match": "\\b(call-script|start-script|signal|set-signal-mask|cache|dont-cache|dont-shade|dont-shadow)\\b",
+			"name": "entity.name.type.bos"
+		},
+		{
+			"match": "\\b(set|get|GET|return|if|else|while|hide|show|spin|stop-spin|accelerate|decelerate|around|along|speed|now|to|from|sleep|move|wait-for-move|turn|wait-for-turn|emit-sfx|explode|type)\\b",
+			"name": "keyword.control.bos"
+		},
+		{
+			"name": "keyword.control.preprocessor.define.bos",
+			"match": "(#define)\\s+([A-Za-z_][A-Za-z0-9_]*)",
+			"captures": {
+				"1": {
+					"name": "keyword.control.preprocessor.bos"
+				},
+				"2": {
+					"name": "constant.language.bos"
+				}
+			}
+		},
+		{
+			"name": "keyword.control.preprocessor.bos",
+			"match": "(#include|#if|#else|#undef|#ifdef|#ifndef|#endif)"
+		},
+		{
+			"match": "\\b([A-Za-z_][A-Za-z0-9_]*)\\b(?=\\()",
+			"name": "support.function.bos"
+		},
+		{
+			"match": "\\b(x-axis|y-axis|z-axis|TRUE|FALSE|UNKNOWN_UNIT_VALUE)\\b",
+			"name": "constant.language.bos"
+		},
+		{
+			"name": "constant.language.bos",
+			"match": "\\b(?:SHATTER|EXPLODE_ON_HIT|FALL|SMOKE|FIRE|BITMAPONLY|NOCEGTRAIL|NOHEATCLOUD|BITMAP|BITMAP1|BITMAP2|BITMAP3|BITMAP4|BITMAP5|BITMAPNUKE|BITMAPMASK|EXPTYPE_SMALLEXPLOSION|EXPTYPE_MEDIUMEXPLOSION|EXPTYPE_LARGEEXPLOSION|EXPTYPE_XLARGEEXPLOSION|EXPTYPE_BLOODEXPLOSION|UNIT_SFX[0-9]|FIRE_W[1-9]|DETO_W[1-9]|ACTIVATION|STANDINGMOVEORDERS|STANDINGFIREORDERS|HEALTH|INBUILDSTANCE|BUSY|PIECE_XZ|PIECE_Y|UNIT_XZ|UNIT_Y|UNIT_HEIGHT|XZ_ATAN|XZ_HYPOT|ATAN|HYPOT|GROUND_HEIGHT|BUILD_PERCENT_LEFT|YARD_OPEN|BUGGER_OFF|ARMORED|IN_WATER|CURRENT_SPEED|VETERAN_LEVEL|ON_ROAD|MAX_ID|MY_ID|UNIT_TEAM|UNIT_BUILD_PERCENT_LEFT|UNIT_ALLIED|MAX_SPEED|CLOAKED|WANT_CLOAK|GROUND_WATER_HEIGHT|UPRIGHT|POW|PRINT|HEADING|TARGET_ID|LAST_ATTACKER_ID|LOS_RADIUS|AIR_LOS_RADIUS|RADAR_RADIUS|JAMMER_RADIUS|SONAR_RADIUS|SONAR_JAM_RADIUS|SEISMIC_RADIUS|DO_SEISMIC_PING|CURRENT_FUEL|TRANSPORT_ID|SHIELD_POWER|STEALTH|CRASHING|CHANGE_TARGET|CEG_DAMAGE|COB_ID|PLAY_SOUND|KILL_UNIT|ALPHA_THRESHOLD|SET_WEAPON_UNIT_TARGET|SET_WEAPON_GROUND_TARGET|SONAR_STEALTH|REVERSING|LUA[0-9]|FLANK_B_MODE|FLANK_B_DIR|FLANK_B_MOBILITY_ADD|FLANK_B_MAX_DAMAGE|FLANK_B_MIN_DAMAGE|WEAPON_RELOADSTATE|WEAPON_RELOADTIME|WEAPON_ACCURACY|WEAPON_SPRAY|WEAPON_RANGE|WEAPON_PROJECTILE_SPEED|WEAPON_STOCKPILE_COUNT|MIN|MAX|ABS|GAME_FRAME|KSIN|KCOS|KTAN|SQRT|ENERGY_MAKE|METAL_MAKE)\\b"
+		},
+		{
+			"name": "constant.numeric.angle-brackets.bos",
+			"match": "<-?(?:[0-9]+|[0-9]*\\.[0-9]+|[0-9]+\\.[0-9]*)>"
+		},
+		{
+			"name": "constant.numeric.square-brackets.bos",
+			"match": "\\[-?(?:[0-9]+|[0-9]*\\.[0-9]+|[0-9]+\\.[0-9]*)\\]"
+		},
+		{
+			"name": "constant.numeric.hexadecimal.bos",
+			"match": "0x[0-9a-fA-F]+"
+		},
+		{
+			"match": "\\b(\\d+|\\d*\\.\\d+)\\b",
+			"name": "constant.numeric.bos"
+		},
+		{
+			"name": "keyword.operator.arithmetic.bos",
+			"match": "\\+|\\-|\\*|\\/|\\%"
+		},
+		{
+			"name": "keyword.operator.bitwise.bos",
+			"match": "\\&|\\|"
+		},
+		{
+			"name": "keyword.operator.comparison.bos",
+			"match": "==|!=|<=|>=|<|>"
+		},
+		{
+			"name": "keyword.operator.logical.bos",
+			"match": "\\&\\&|\\|\\||\\bAND\\b|\\band\\b|\\bOR\\b|\\bor\\b|\\bNOT\\b|!"
+		},
+		{
+			"name": "string.quoted.double.bos",
+			"match": "\"([^\"\\\\]|\\\\.)*\""
+		},
+		{
+			"name": "string.quoted.single.bos",
+			"match": "'([^'\\\\]|\\\\.)*'"
+		},
+		{
+			"name": "Piece Variables",
+			"scope": "variable.piece.bos",
+			"patterns": [
+				{
+					"begin": "\\bpiece\\b\\s+",
+					"end": ";",
+					"patterns": [
+						{
+							"match": "[A-Za-z_][A-Za-z0-9_]*",
+							"name": "variable.piece.bos"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Referenced Piece Variables",
+			"scope": "variable.reference.bos",
+			"patterns": [
+				{
+					"match": "\\b([A-Za-z_][A-Za-z0-9_]*)\\b",
+					"name": "variable.reference.bos"
+				}
+			]
+		}
+	],
+	"repository": {},
+	"scopeName": "source.bos"
+}
