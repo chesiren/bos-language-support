@@ -1,19 +1,23 @@
 {
     "iconDefinitions": {
         "bosFileDark": {
-            "iconPath": "./icons/bos-icon-dark.png"
+            "iconPath": "../icons/bos-icon-dark.png"
         },
         "cobFileDark": {
-            "iconPath": "./icons/cob-icon-dark.png"
+            "iconPath": "../icons/cob-icon-dark.png"
         },
         "bosFileLight": {
-            "iconPath": "./icons/bos-icon-light.png"
+            "iconPath": "../icons/bos-icon-light.png"
         },
         "cobFileLight": {
-            "iconPath": "./icons/cob-icon-light.png"
+            "iconPath": "../icons/cob-icon-light.png"
         }
     },
     "fileExtensions": {
+        "bos": "bosFileDark",
+        "cob": "cobFileDark"
+    },
+    "languageIds": {
         "bos": "bosFileDark",
         "cob": "cobFileDark"
     },
@@ -21,9 +25,10 @@
         "fileExtensions": {
             "bos": "bosFileLight",
             "cob": "cobFileLight"
+        },
+        "languageIds": {
+            "bos": "bosFileLight",
+            "cob": "cobFileLight"
         }
-    },
-    "folderNames": {},
-    "languageIds": {},
-    "fileNames": {}
+    }
 }
