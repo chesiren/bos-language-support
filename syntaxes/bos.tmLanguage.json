@@ -31,6 +31,10 @@
 			"name": "keyword.control.bos"
 		},
 		{
+			"name": "constant.character.escape.bos",
+			"match": "\\\\$"
+		},
+		{
 			"name": "keyword.control.preprocessor.define.bos",
 			"match": "(#define)\\s+([A-Za-z_][A-Za-z0-9_]*)",
 			"captures": {
