@@ -95,11 +95,18 @@ RBRACKET: ']';
 COMMA: ',';
 SEMICOLON: ';';
 
-//NEWLINE: '\r'? '\n';
+MULTI_LINE_MACRO:
+	'#' (~[\n]*? '\\' '\r'? '\n')+ ~ [\n]+ -> channel(HIDDEN);
 
-WS: [ \t\r\n]+ -> skip;
-COMMENT: '//' ~[\r\n]* -> skip;
-BLOCK_COMMENT: '/*' ( BLOCK_COMMENT | .)*? '*/' -> skip;
+DIRECTIVE: '#' ~ [\n]* -> channel(HIDDEN);
+
+WHITESPACE: [ \t]+ -> channel(HIDDEN);
+
+NEWLINE: ('\r' '\n'? | '\n') -> channel(HIDDEN);
+
+LINE_COMMENT: '//' ~[\r\n]* -> channel(HIDDEN);
+
+BLOCK_COMMENT: '/*' .*? '*/' -> channel(HIDDEN);
 
 // Preprocessor directives
 preprocessor:
@@ -139,7 +146,7 @@ statement:
 	| keywordStatement SEMICOLON
 	| varStatement SEMICOLON
 	| incrementStatement SEMICOLON
-	| varName SEMICOLON // TODO: define function to load from includes
+	| varName SEMICOLON? // TODO: define function to load from includes
 	| funcCall // TODO: seems to work? see legtriariusheatray.bos
 	| SEMICOLON;
 
