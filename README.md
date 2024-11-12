@@ -1,6 +1,6 @@
 # BOS Language Support Extension
 
-The **BOS Language Support Extension** provides syntax highlighting, validation, and diagnostics for `.bos` files used in **Beyond All Reason** (it probably works for any game based on the **Spring RTS** engine but i didn't check).
+The **BOS Language Support Extension** provides syntax highlighting, validation, and diagnostics for `.bos` files used in **Beyond All Reason**.
 
 ## Features
 

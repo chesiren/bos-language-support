@@ -22,9 +22,9 @@
   },
   "homepage": "https://github.com/chesiren/bos-language-support/blob/main/README.md",
   "license": "SEE LICENSE IN LICENSE.txt",
-  "icon": "icons/logo.png",
+  "icon": "icons/bos-icon-dark.png",
   "galleryBanner": {
-    "color": "#BE3313",
+    "color": "#005F91",
     "theme": "dark"
   },
   "activationEvents": [],
