@@ -1,6 +1,6 @@
 {
   "name": "bos-language-support",
-  "displayName": "Bos Language Support",
+  "displayName": "Bos File Language Support",
   "description": "A vscode extension that adds syntax highlighting and grammar validation for .bos files",
   "version": "1.0.0",
   "publisher": "chesiren",
