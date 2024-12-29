@@ -15,7 +15,7 @@ const URI = require('vscode-uri').URI;
 
 const connection = createConnection(ProposedFeatures.all);
 
-connection.console.log('BOS Language Server is starting...');
+//connection.console.log('BOS Language Server is starting...');
 
 const documents = new TextDocuments(TextDocument);
 
@@ -29,8 +29,8 @@ class ErrorListener extends antlr4.default.error.ErrorListener
 
     syntaxError(recognizer, offendingSymbol, line, column, msg, e)
     {
-        console.log("syntaxError")
-        console.log(recognizer, offendingSymbol, line, column, msg, e)
+        //console.log("syntaxError")
+        //console.log(recognizer, offendingSymbol, line, column, msg, e)
 
         let errorMessage = msg;
         let startLine = line;
@@ -104,7 +104,7 @@ documents.onDidChangeContent(change =>
 
 connection.onInitialize((params) =>
 {
-    connection.console.log('Server initialized');
+    //connection.console.log('Server initialized');
     const capabilities = params.capabilities;
 
     const workspaceCapabilities = {
@@ -121,7 +121,7 @@ connection.onInitialize((params) =>
 
 connection.onInitialized(() =>
 {
-    connection.console.log('Watching for .bos files in the workspace...');
+    //connection.console.log('Watching for .bos files in the workspace...');
 
     connection.client.register({
         method: 'workspace/didChangeWatchedFiles',
@@ -137,7 +137,7 @@ connection.onInitialized(() =>
 
 connection.onDidChangeWatchedFiles((change) =>
 {
-    connection.console.log('Changes detected in .bos files');
+    //connection.console.log('Changes detected in .bos files');
 
     change.changes.forEach((fileChange) =>
     {
@@ -155,7 +155,7 @@ connection.listen();
 
 function validateBosFile(textDocument)
 {
-    connection.console.log('validateBosFile ' + textDocument.uri);
+    //connection.console.log('validateBosFile ' + textDocument.uri);
 
     const diagnostics = [];
     const input = textDocument.getText();
@@ -196,7 +196,7 @@ function validateBosFile(textDocument)
                     message: error.message,
                     source: "bos-parser"
                 };
-                connection.console.log("Logged " + textDocument.uri + ": " + error.line + " " + error.column + " " + error.endLine + " " + error.endColumn + " - " + error.message)
+                //connection.console.log("Logged " + textDocument.uri + ": " + error.line + " " + error.column + " " + error.endLine + " " + error.endColumn + " - " + error.message)
                 /*const diagnostic = {
                     severity: DiagnosticSeverity.Error,
                     range: {
@@ -217,7 +217,7 @@ function validateBosFile(textDocument)
         }
     } catch (e)
     {
-        connection.console.log("error")
+        //connection.console.log("error")
         const diagnostic = {
             severity: DiagnosticSeverity.Error,
             range: {

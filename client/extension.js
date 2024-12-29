@@ -9,8 +9,8 @@ let client;
 
 function activate(context)
 {
-	const outputChannel = vscode.window.createOutputChannel('BOS Language Server');	
-	outputChannel.show();
+	//const outputChannel = vscode.window.createOutputChannel('BOS Language Server');
+	//outputChannel.show();
 
 	let serverModule = context.asAbsolutePath(path.join('server', 'server.js'));
 
@@ -29,8 +29,8 @@ function activate(context)
 		documentSelector: [{ scheme: 'file', language: 'bos' }],
 		synchronize: {
 			fileEvents: vscode.workspace.createFileSystemWatcher('**/*.bos')
-		},
-		outputChannel: outputChannel  
+		}
+		//outputChannel: outputChannel
 	};
 
 	client = new LanguageClient(
