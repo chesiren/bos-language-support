@@ -28,6 +28,7 @@ function activate(context)
 	let clientOptions = {
 		documentSelector: [{ scheme: 'file', language: 'bos' }],
 		synchronize: {
+			configurationSection: 'bos',
 			fileEvents: vscode.workspace.createFileSystemWatcher('**/*.bos')
 		}
 		//outputChannel: outputChannel

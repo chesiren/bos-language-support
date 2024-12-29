@@ -74,7 +74,18 @@
         "scopeName": "source.bos",
         "path": "./syntaxes/bos.tmLanguage.json"
       }
-    ]
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "BOS Extension Settings",
+      "properties": {
+        "bos.scanWorkspace": {
+          "type": "boolean",
+          "default": false,
+          "description": "Scan all bos files in the workspace for errors."
+        }
+      }
+    }
   },
   "scripts": {
     "lint": "eslint .",

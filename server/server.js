@@ -15,6 +15,10 @@ const URI = require('vscode-uri').URI;
 
 const connection = createConnection(ProposedFeatures.all);
 
+var config = { 
+    scanWorkspace: false 
+};
+
 //connection.console.log('BOS Language Server is starting...');
 
 const documents = new TextDocuments(TextDocument);
@@ -110,6 +114,7 @@ connection.onInitialize((params) =>
     const workspaceCapabilities = {
         textDocumentSync: documents.syncKind,
         workspace: {
+            configuration: true,
             workspaceFolders: !!capabilities.workspace?.workspaceFolders
         }
     };
@@ -119,7 +124,7 @@ connection.onInitialize((params) =>
     };
 });
 
-connection.onInitialized(() =>
+connection.onInitialized(async () =>
 {
     //connection.console.log('Watching for .bos files in the workspace...');
 
@@ -131,6 +136,15 @@ connection.onInitialized(() =>
             ]
         }
     });
+});
+
+connection.onDidChangeConfiguration(async () =>
+{
+    const settings = await connection.workspace.getConfiguration({
+        section: 'bos'
+    });
+    config.scanWorkspace = settings.scanWorkspace ?? false;
+    //connection.console.log(`scanWorkspace: ${config.scanWorkspace}`);
 
     analyzeAllBosFiles();
 });
@@ -236,6 +250,9 @@ function validateBosFile(textDocument)
 
 async function analyzeAllBosFiles()
 {
+    if (config.scanWorkspace == false)
+        return;
+
     const workspaceFolders = await connection.workspace.getWorkspaceFolders();
 
     if (workspaceFolders)
