@@ -145,7 +145,7 @@ statement:
 	| forStatement
 	| keywordStatement SEMICOLON
 	| varStatement SEMICOLON
-	| varName SEMICOLON? // TODO: define function to load from includes
+	| definedVarStatement // TODO: define function to load from includes
 	| funcCall // TODO: seems to work? see legtriariusheatray.bos
 	| SEMICOLON;
 
@@ -153,6 +153,8 @@ assignStatement:
 	varName EQUAL expression
 	| incrementStatement
 	| decrementStatement;
+
+definedVarStatement: varName SEMICOLON?;
 
 incrementStatement: PLUS PLUS varName;
 decrementStatement: MINUS MINUS varName;
