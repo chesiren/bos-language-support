@@ -6,6 +6,7 @@ Based on [Keep a Changelog](http://keepachangelog.com/)
 
 ## [Unreleased]
 
+- Don't throw errors when a bos file is empty
 - Fixed `ifndef` and `ifdef` syntax coloring
 
 ## [1.0.0] - 2024-10-24

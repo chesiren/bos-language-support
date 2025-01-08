@@ -123,7 +123,7 @@ preprocessor:
 // quotes and then adds $ instead, but not sure how to do that here. use lexer modes
 
 // Entry point for the script
-file: ( preprocessor | declaration)+;
+file: ( preprocessor | declaration)*;
 
 declaration: pieceDec | staticVarDec | funcDec;
 
