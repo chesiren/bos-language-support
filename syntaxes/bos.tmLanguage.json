@@ -92,7 +92,7 @@
 		},
 		{
 			"name": "keyword.operator.logical.bos",
-			"match": "\\&\\&|\\|\\||\\bAND\\b|\\band\\b|\\bOR\\b|\\bor\\b|\\bNOT\\b|!"
+			"match": "\\&\\&|\\|\\||\\bAND\\b|\\band\\b|\\bOR\\b|\\bor\\b|\\bNOT\\b|\\bnot\\b|!"
 		},
 		{
 			"name": "string.quoted.double.bos",
