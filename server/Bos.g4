@@ -145,7 +145,6 @@ statement:
 	| forStatement
 	| keywordStatement SEMICOLON
 	| varStatement SEMICOLON
-	| incrementStatement SEMICOLON
 	| varName SEMICOLON? // TODO: define function to load from includes
 	| funcCall // TODO: seems to work? see legtriariusheatray.bos
 	| SEMICOLON;
