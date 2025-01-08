@@ -81,7 +81,7 @@ GREATER_EQUAL: '>=';
 
 LOGICAL_AND: '&&' | 'and' | 'AND';
 LOGICAL_OR: '||' | 'or' | 'OR';
-NOT: '!' | 'not' | 'NOT';
+LOGICAL_NOT: '!' | 'not' | 'NOT';
 
 BITWISE_AND: '&';
 BITWISE_OR: '|';
@@ -260,7 +260,7 @@ globalConstant:
 	| UNKNOWN_UNIT_VALUE (LPAREN expression RPAREN)? (
 		LPAREN expression RPAREN
 	)?;
-unaryOp: MINUS | NOT;
+unaryOp: MINUS | LOGICAL_NOT;
 funcCall: funcName LPAREN expressionList RPAREN;
 randCall: RAND LPAREN expression COMMA expression RPAREN;
 commaExpression: COMMA expression;
