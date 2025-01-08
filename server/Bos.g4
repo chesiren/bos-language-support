@@ -82,9 +82,11 @@ GREATER_EQUAL: '>=';
 LOGICAL_AND: '&&' | 'and' | 'AND';
 LOGICAL_OR: '||' | 'or' | 'OR';
 LOGICAL_NOT: '!' | 'not' | 'NOT';
+LOGICAL_XOR: '^^' | 'xor' | 'XOR';
 
 BITWISE_AND: '&';
 BITWISE_OR: '|';
+BITWISE_XOR: '^';
 
 LPAREN: '(';
 RPAREN: ')';
@@ -276,6 +278,7 @@ op:
 	| MODULO
 	| BITWISE_AND
 	| BITWISE_OR
+	| BITWISE_XOR
 	| LESS_THAN
 	| GREATER_THAN
 	| DOUBLE_EQUAL
@@ -283,7 +286,8 @@ op:
 	| GREATER_EQUAL
 	| NOT_EQUAL
 	| LOGICAL_AND
-	| LOGICAL_OR;
+	| LOGICAL_OR
+	| LOGICAL_XOR;
 
 expressionList: (expression (COMMA expression)*)?;
 
