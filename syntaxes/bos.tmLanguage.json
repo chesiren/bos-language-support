@@ -48,7 +48,7 @@
 		},
 		{
 			"name": "keyword.control.preprocessor.bos",
-			"match": "(#include|#if|#else|#undef|#ifdef|#ifndef|#endif)"
+			"match": "(#include|#undef|#ifdef|#ifndef|#if|#else|#endif)"
 		},
 		{
 			"match": "\\b([A-Za-z_][A-Za-z0-9_]*)\\b(?=\\()",
