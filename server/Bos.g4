@@ -206,11 +206,11 @@ callStatement:
 startStatement:
 	START_SCRIPT funcName LPAREN expressionList RPAREN;
 spinStatement:
-	SPIN pieceName AROUND axis SPEED expression optionalAcceleration;
-optionalAcceleration: (ACCELERATE expression)?;
+	SPIN pieceName AROUND axis SPEED expression optionalAcceleration?;
+optionalAcceleration: ACCELERATE expression;
 stopSpinStatement:
-	STOP_SPIN pieceName AROUND axis optionalDeceleration;
-optionalDeceleration: (DECELERATE expression)?;
+	STOP_SPIN pieceName AROUND axis optionalDeceleration?;
+optionalDeceleration: DECELERATE expression;
 turnStatement: TURN pieceName TO axis expression speedNow;
 moveStatement: MOVE pieceName TO axis expression speedNow;
 speedNow: (NOW | SPEED expression);
