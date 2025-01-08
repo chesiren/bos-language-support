@@ -249,8 +249,8 @@ term:
 
 constant:
 	// TODO: Integers are not meant to be encased in <> [] according to the compiler syntax (L665 bos2cob), yet it still works, why?
-	'<' (signedFloatConstant | signedIntegerConstant) '>'
-	| '[' (signedFloatConstant | signedIntegerConstant) ']'
+	'<' (signedFloatConstant | signedIntegerConstant | varName) '>'
+	| '[' (signedFloatConstant | signedIntegerConstant | varName) ']'
 	| (signedFloatConstant | signedIntegerConstant);
 
 globalConstant:

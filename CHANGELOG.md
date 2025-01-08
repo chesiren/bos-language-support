@@ -6,6 +6,7 @@ Based on [Keep a Changelog](http://keepachangelog.com/)
 
 ## [Unreleased]
 
+- Variables can now be encased in <> []
 - Don't throw errors when a bos file is empty
 - Fixed `ifndef` and `ifdef` syntax coloring
 
