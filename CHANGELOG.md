@@ -6,6 +6,10 @@ Based on [Keep a Changelog](http://keepachangelog.com/)
 
 ## [Unreleased]
 
+...
+
+## [1.1.0] - 2025-01-13
+
 ### Added
 
 - Added logical and bitwise xor operators
