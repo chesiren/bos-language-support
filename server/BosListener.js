@@ -96,6 +96,15 @@ class BosListener extends antlr4.tree.ParseTreeListener {
 	}
 
 
+	// Enter a parse tree produced by BosParser#definedVarStatement.
+	enterDefinedVarStatement(ctx) {
+	}
+
+	// Exit a parse tree produced by BosParser#definedVarStatement.
+	exitDefinedVarStatement(ctx) {
+	}
+
+
 	// Enter a parse tree produced by BosParser#incrementStatement.
 	enterIncrementStatement(ctx) {
 	}
