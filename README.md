@@ -23,6 +23,10 @@ The **BOS Language Support Extension** provides syntax highlighting, validation,
 - Check the **Problems** panel in VSCode to view any parsing or lexer errors with detailed descriptions and locations.
 - Fix errors by following the suggestions provided by the extension.
 
+## Compiling `.bos` files to `.cob`
+
+Check out [the BAR script compiler repository](https://github.com/beyond-all-reason/BARScriptCompiler), download it and follow the instructions in the **Setup for VSCode** section to compile BOS files using VSCode.
+
 ## Roadmap
 
 - Load files that are included in the `.bos` by `#include`.
