@@ -24,7 +24,7 @@
   "license": "SEE LICENSE IN LICENSE.txt",
   "icon": "icons/bos-icon-dark.png",
   "galleryBanner": {
-    "color": "#005F91",
+    "color": "##313131",
     "theme": "dark"
   },
   "activationEvents": [],
