@@ -53,7 +53,7 @@ null
 'piece'
 'static-var'
 'var'
-'sound'
+'play-sound'
 'signal'
 'set-signal-mask'
 '+'
@@ -149,7 +149,7 @@ DECELERATE
 PIECE
 STATIC_VAR
 VAR
-SOUND
+PLAY_SOUND
 SIGNAL
 SET_SIGNAL_MASK
 PLUS

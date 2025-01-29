@@ -24,7 +24,7 @@ public class BosParser extends Parser {
 		GET=32, START_SCRIPT=33, CALL_SCRIPT=34, TO=35, SPEED=36, NOW=37, AROUND=38, 
 		ALONG=39, TYPE=40, FROM=41, IF=42, ELSE=43, WHILE=44, FOR=45, TRUE=46, 
 		FALSE=47, UNKNOWN_UNIT_VALUE=48, ACCELERATE=49, DECELERATE=50, PIECE=51, 
-		STATIC_VAR=52, VAR=53, SOUND=54, SIGNAL=55, SET_SIGNAL_MASK=56, PLUS=57, 
+		STATIC_VAR=52, VAR=53, PLAY_SOUND=54, SIGNAL=55, SET_SIGNAL_MASK=56, PLUS=57, 
 		MINUS=58, MULTIPLY=59, DIVIDE=60, MODULO=61, EQUAL=62, DOUBLE_EQUAL=63, 
 		NOT_EQUAL=64, LESS_THAN=65, LESS_EQUAL=66, GREATER_THAN=67, GREATER_EQUAL=68, 
 		LOGICAL_AND=69, LOGICAL_OR=70, LOGICAL_NOT=71, LOGICAL_XOR=72, BITWISE_AND=73, 
@@ -82,7 +82,7 @@ public class BosParser extends Parser {
 			"'drop-unit'", "'return'", "'rand'", null, "'start-script'", "'call-script'", 
 			"'to'", "'speed'", "'now'", "'around'", "'along'", "'type'", "'from'", 
 			"'if'", "'else'", "'while'", "'for'", "'TRUE'", "'FALSE'", "'UNKNOWN_UNIT_VALUE'", 
-			"'accelerate'", "'decelerate'", "'piece'", "'static-var'", "'var'", "'sound'", 
+			"'accelerate'", "'decelerate'", "'piece'", "'static-var'", "'var'", "'play-sound'", 
 			"'signal'", "'set-signal-mask'", "'+'", "'-'", "'*'", "'/'", "'%'", "'='", 
 			"'=='", "'!='", "'<'", "'<='", "'>'", "'>='", null, null, null, null, 
 			"'&'", "'|'", "'^'", "'('", "')'", "'{'", "'}'", "'['", "']'", "','", 
@@ -99,7 +99,7 @@ public class BosParser extends Parser {
 			"DROP_UNIT", "RETURN", "RAND", "GET", "START_SCRIPT", "CALL_SCRIPT", 
 			"TO", "SPEED", "NOW", "AROUND", "ALONG", "TYPE", "FROM", "IF", "ELSE", 
 			"WHILE", "FOR", "TRUE", "FALSE", "UNKNOWN_UNIT_VALUE", "ACCELERATE", 
-			"DECELERATE", "PIECE", "STATIC_VAR", "VAR", "SOUND", "SIGNAL", "SET_SIGNAL_MASK", 
+			"DECELERATE", "PIECE", "STATIC_VAR", "VAR", "PLAY_SOUND", "SIGNAL", "SET_SIGNAL_MASK", 
 			"PLUS", "MINUS", "MULTIPLY", "DIVIDE", "MODULO", "EQUAL", "DOUBLE_EQUAL", 
 			"NOT_EQUAL", "LESS_THAN", "LESS_EQUAL", "GREATER_THAN", "GREATER_EQUAL", 
 			"LOGICAL_AND", "LOGICAL_OR", "LOGICAL_NOT", "LOGICAL_XOR", "BITWISE_AND", 
@@ -754,7 +754,7 @@ public class BosParser extends Parser {
 			case WHILE:
 			case FOR:
 			case VAR:
-			case SOUND:
+			case PLAY_SOUND:
 			case SIGNAL:
 			case SET_SIGNAL_MASK:
 			case PLUS:
@@ -1550,7 +1550,7 @@ public class BosParser extends Parser {
 				returnStatement();
 				}
 				break;
-			case SOUND:
+			case PLAY_SOUND:
 				enterOuterAlt(_localctx, 21);
 				{
 				setState(297);
@@ -2591,7 +2591,7 @@ public class BosParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class PlaySoundStatementContext extends ParserRuleContext {
-		public TerminalNode SOUND() { return getToken(BosParser.SOUND, 0); }
+		public TerminalNode PLAY_SOUND() { return getToken(BosParser.PLAY_SOUND, 0); }
 		public TerminalNode LPAREN() { return getToken(BosParser.LPAREN, 0); }
 		public TerminalNode STRING() { return getToken(BosParser.STRING, 0); }
 		public TerminalNode RPAREN() { return getToken(BosParser.RPAREN, 0); }
@@ -2613,7 +2613,7 @@ public class BosParser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(412);
-			match(SOUND);
+			match(PLAY_SOUND);
 			setState(413);
 			match(LPAREN);
 			setState(414);

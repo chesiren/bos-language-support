@@ -207,7 +207,7 @@ class BosParser extends antlr4.Parser {
                             "'around'", "'along'", "'type'", "'from'", "'if'", 
                             "'else'", "'while'", "'for'", "'TRUE'", "'FALSE'", 
                             "'UNKNOWN_UNIT_VALUE'", "'accelerate'", "'decelerate'", 
-                            "'piece'", "'static-var'", "'var'", "'sound'", 
+                            "'piece'", "'static-var'", "'var'", "'play-sound'", 
                             "'signal'", "'set-signal-mask'", "'+'", "'-'", 
                             "'*'", "'/'", "'%'", "'='", "'=='", "'!='", 
                             "'<'", "'<='", "'>'", "'>='", null, null, null, 
@@ -224,7 +224,7 @@ class BosParser extends antlr4.Parser {
                              "ALONG", "TYPE", "FROM", "IF", "ELSE", "WHILE", 
                              "FOR", "TRUE", "FALSE", "UNKNOWN_UNIT_VALUE", 
                              "ACCELERATE", "DECELERATE", "PIECE", "STATIC_VAR", 
-                             "VAR", "SOUND", "SIGNAL", "SET_SIGNAL_MASK", 
+                             "VAR", "PLAY_SOUND", "SIGNAL", "SET_SIGNAL_MASK", 
                              "PLUS", "MINUS", "MULTIPLY", "DIVIDE", "MODULO", 
                              "EQUAL", "DOUBLE_EQUAL", "NOT_EQUAL", "LESS_THAN", 
                              "LESS_EQUAL", "GREATER_THAN", "GREATER_EQUAL", 
@@ -1897,7 +1897,7 @@ class BosParser extends antlr4.Parser {
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 412;
-	        this.match(BosParser.SOUND);
+	        this.match(BosParser.PLAY_SOUND);
 	        this.state = 413;
 	        this.match(BosParser.LPAREN);
 	        this.state = 414;
@@ -2806,7 +2806,7 @@ BosParser.DECELERATE = 50;
 BosParser.PIECE = 51;
 BosParser.STATIC_VAR = 52;
 BosParser.VAR = 53;
-BosParser.SOUND = 54;
+BosParser.PLAY_SOUND = 54;
 BosParser.SIGNAL = 55;
 BosParser.SET_SIGNAL_MASK = 56;
 BosParser.PLUS = 57;
@@ -5034,8 +5034,8 @@ class PlaySoundStatementContext extends antlr4.ParserRuleContext {
         this.ruleIndex = BosParser.RULE_playSoundStatement;
     }
 
-	SOUND() {
-	    return this.getToken(BosParser.SOUND, 0);
+	PLAY_SOUND() {
+	    return this.getToken(BosParser.PLAY_SOUND, 0);
 	};
 
 	LPAREN() {

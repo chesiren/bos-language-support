@@ -60,7 +60,7 @@ DECELERATE: 'decelerate';
 PIECE: 'piece';
 STATIC_VAR: 'static-var';
 VAR: 'var';
-SOUND: 'sound';
+PLAY_SOUND: 'play-sound';
 
 SIGNAL: 'signal';
 SET_SIGNAL_MASK: 'set-signal-mask';
@@ -232,7 +232,7 @@ attachUnitStatement: ATTACH_UNIT expression TO expression;
 dropUnitStatement: DROP_UNIT expression;
 returnStatement: RETURN (expression)?;
 playSoundStatement:
-	SOUND LPAREN STRING (COMMA expression)? RPAREN;
+	PLAY_SOUND LPAREN STRING (COMMA expression)? RPAREN;
 cacheStatement: CACHE pieceName;
 dontCacheStatement: DONT_CACHE pieceName;
 dontShadowStatement: DONT_SHADOW pieceName;
