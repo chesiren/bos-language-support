@@ -6,6 +6,7 @@ Based on [Keep a Changelog](http://keepachangelog.com/)
 
 ## [Unreleased]
 
+- Changed marketplace color to grey so it isn't white text on white background
 - Fixed missing syntax coloring for `attach-unit`, `drop-unit` and `play-sound`
 
 ## [1.1.0] - 2025-01-13
