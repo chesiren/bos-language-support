@@ -14,6 +14,7 @@ D_ELSE: '#else';
 
 MOVE: 'move';
 TURN: 'turn';
+SCALE: 'scale';
 SPIN: 'spin';
 STOP_SPIN: 'stop-spin';
 SHOW: 'show';
@@ -26,6 +27,7 @@ EMIT_SFX: 'emit-sfx';
 SLEEP: 'sleep';
 WAIT_FOR_TURN: 'wait-for-turn';
 WAIT_FOR_MOVE: 'wait-for-move';
+WAIT_FOR_SCALE: 'wait-for-scale';
 EXPLODE: 'explode';
 SET: 'set';
 ATTACH_UNIT: 'attach-unit';
@@ -182,8 +184,10 @@ keywordStatement:
 	| stopSpinStatement
 	| turnStatement
 	| moveStatement
+	| scaleStatement
 	| waitForTurnStatement
 	| waitForMoveStatement
+	| waitForScaleStatement
 	| emitSfxStatement
 	| sleepStatement
 	| hideStatement
@@ -215,9 +219,11 @@ stopSpinStatement:
 optionalDeceleration: DECELERATE expression;
 turnStatement: TURN pieceName TO axis expression speedNow;
 moveStatement: MOVE pieceName TO axis expression speedNow;
+scaleStatement: SCALE pieceName TO axis expression speedNow;
 speedNow: (NOW | SPEED expression);
 waitForTurnStatement: WAIT_FOR_TURN pieceName AROUND axis;
 waitForMoveStatement: WAIT_FOR_MOVE pieceName ALONG axis;
+waitForScaleStatement: WAIT_FOR_SCALE pieceName ALONG axis;
 emitSfxStatement: EMIT_SFX expression FROM pieceName;
 sleepStatement: SLEEP expression;
 hideStatement: HIDE pieceName;

@@ -240,6 +240,15 @@ class BosListener extends antlr4.tree.ParseTreeListener {
 	}
 
 
+	// Enter a parse tree produced by BosParser#scaleStatement.
+	enterScaleStatement(ctx) {
+	}
+
+	// Exit a parse tree produced by BosParser#scaleStatement.
+	exitScaleStatement(ctx) {
+	}
+
+
 	// Enter a parse tree produced by BosParser#speedNow.
 	enterSpeedNow(ctx) {
 	}
@@ -264,6 +273,15 @@ class BosListener extends antlr4.tree.ParseTreeListener {
 
 	// Exit a parse tree produced by BosParser#waitForMoveStatement.
 	exitWaitForMoveStatement(ctx) {
+	}
+
+
+	// Enter a parse tree produced by BosParser#waitForScaleStatement.
+	enterWaitForScaleStatement(ctx) {
+	}
+
+	// Exit a parse tree produced by BosParser#waitForScaleStatement.
+	exitWaitForScaleStatement(ctx) {
 	}
 
 

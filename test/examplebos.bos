@@ -22,6 +22,18 @@ Activate()
 	}
 	set ARMORED to 0;
 	spin spinner around y-axis speed extractionRate accelerate 90;
+
+	move spinner to x-axis [0] speed [144.196987];
+	move spinner to x-axis [0] now;
+	wait-for-move spinner along x-axis;
+
+	turn spinner to x-axis <-100> speed <32.184329>;
+	turn spinner to x-axis <-100> now;
+	wait-for-turn pieceName around y-axis;
+
+	scale spinner to z-axis [0] speed [1000];
+	scale spinner to z-axis [0] now;
+	wait-for-scale spinner along z-axis;
 }
 
 Deactivate()
