@@ -27,7 +27,7 @@
 			"name": "entity.name.type.bos"
 		},
 		{
-			"match": "\\b(set|get|GET|return|if|else|while|hide|show|spin|stop-spin|accelerate|decelerate|around|along|speed|now|to|from|sleep|move|wait-for-move|turn|wait-for-turn|emit-sfx|explode|type|attach-unit|drop-unit|play-sound)\\b",
+			"match": "\\b(set|get|GET|return|if|else|while|hide|show|spin|stop-spin|accelerate|decelerate|around|along|speed|now|to|from|sleep|move|wait-for-move|turn|wait-for-turn|scale|wait-for-scale|emit-sfx|explode|type|attach-unit|drop-unit|play-sound)\\b",
 			"name": "keyword.control.bos"
 		},
 		{
