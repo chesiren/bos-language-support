@@ -8,6 +8,12 @@ Based on [Keep a Changelog](http://keepachangelog.com/)
 
 ...
 
+## [1.2.0] - 2025-10-19
+
+### Added
+
+- Add 'scale' to BOS control keywords ([#1](https://github.com/chesiren/bos-language-support/pull/1)) by @Beherith
+
 ## [1.1.1] - 2025-01-29
 
 ### Fixed
